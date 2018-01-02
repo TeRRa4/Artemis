@@ -22,8 +22,8 @@ namespace Artemis.DeviceProviders.Logitech
                              "Please check your cables and updating the Logitech Gaming Software\n" +
                              "A minimum version of 8.81.15 is required.\n\n" +
                              "If needed, you can select a different keyboard in Artemis under settings.";
-            Height = 7;
-            Width = 22;
+            Height = 8;
+            Width = 23;
             PreviewSettings = new PreviewSettings(new Rect(34, 18, 916, 272), Resources.g910);
             _generalSettings = SettingsProvider.Load<GeneralSettings>();
         }
@@ -68,7 +68,7 @@ namespace Artemis.DeviceProviders.Logitech
                 LogitechGSDK.LogiLedSetLightingFromBitmap(OrionUtilities.BitmapToByteArray(bitmap, G910Keymappings));
             }
 
-            using (var resized = OrionUtilities.ResizeImage(bitmap, 22, 7))
+            using (var resized = OrionUtilities.ResizeImage(bitmap, 23, 8))
             {
                 // Color the extra keys on the left side of the keyboard
                 SetLogitechColorFromCoordinates(resized, KeyboardNames.G_LOGO, 0, 1);
@@ -85,7 +85,7 @@ namespace Artemis.DeviceProviders.Logitech
                 SetLogitechColorFromCoordinates(resized, KeyboardNames.G_9, 6, 0);
 
                 // Color the G-badge
-                SetLogitechColorFromCoordinates(resized, KeyboardNames.G_BADGE, 5, 6);
+                SetLogitechColorFromCoordinates(resized, KeyboardNames.G_BADGE, 5, 7);
             }
         }
 
